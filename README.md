@@ -15,6 +15,7 @@ A aplicação consiste em gerenciar uma lista de jogos, permitindo operações d
 - Java Spring Boot 🛡️
 - Banco de Dados MySQL 💾
 - Docker 🐳
+- Maven 🐘
 
 ## Estrutura do Projeto
 
