@@ -1,0 +1,28 @@
+services:
+  mysql-docker:
+    image: 'mysql:latest'
+    container_name: dev-mysql
+    environment:
+      - 'MYSQL_DATABASE=gamelist'
+      - 'MYSQL_PASSWORD=secret'
+      - 'MYSQL_ROOT_PASSWORD=verysecret'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3308:3306'
+    volumes:
+      - ./.data/mysql/data:/var/lib/mysql
+    networks:
+      - dev-network
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "5050:8080"
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    driver: bridge
